@@ -45,7 +45,7 @@ $subjectImages = array(
 );
 
 ?>
-
+<h2>
 <div id='subjects'>
 	<?php
 	foreach($usersSubjects as $subject){
