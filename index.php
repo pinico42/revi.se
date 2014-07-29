@@ -13,17 +13,28 @@ $l->writeHeader();
 ?>
 
 <?php
-$subjectsFile = fopen('private/subjects.json','r');
+function get_json($path){
+	$subjectsFile = fopen($path,'r');
 
-$json = fread($subjectsFile,filesize("private/subjects.json"));
+	$json = fread($subjectsFile,filesize($path));
 
-$subjectsObj = json_decode($json,true);
+	$subjectsObj = json_decode($json,true);
+
+	fclose($subjectsFile);
+
+	return $subjectsObj;
+}
+
+$subjectsObj = get_json("private/subjects.json");
 
 $email = $_COOKIE['email'];
 
 $usersSubjects = $subjectsObj[$email];
 
-fclose($subjectsFile);
+
+$topics = get_json("private/topics.json");
+
+$usersTopics = $topics[$email];
 
 $subjectImages = array(
 	"Art" => "images/subjects/art.png",
@@ -43,7 +54,7 @@ $subjectImages = array(
 	"Religious Studies" => "images/subjects/relegiousstudies.png",
 	"Spanish" => "images/subjects/spanish.png",
 );
-
+var_dump($_SERVER);
 ?>
 <h1 class='title'>Your Subjects</h1>
 <div id='subjects'>
@@ -51,16 +62,26 @@ $subjectImages = array(
 	foreach($usersSubjects as $subject){
 		$r = rand(1,4);
 		if($r == 4){ $r = 5; }
-			echo "
-			<div class='flip-container'>
+		
+		$s = "";
+		if(sizeof($usersTopics[$subject['Name']]) != 1){
+			$s = "s";
+		}
+
+		echo "
+			<a class='flip-container' href='topics/?t=".$subject['Name']."'>
 				<div class='flipper'>
 					<div class='front c$r'>
 						<img src='".$subjectImages[$subject["Name"]]."' width='40%' height='40%'>
 					</div>
-					<div class='back c$r'>".$subject['Name']."
+					<div class='back c$r'>
+						<div class='fContent'>
+							<h3>".$subject['Name']."</h3>
+							<h4>".sizeof($usersTopics[$subject['Name']])." Topic$s</h4>
+						</div>
 					</div>
 				</div>
-			</div>
+			</a>
 		";
 	}
 

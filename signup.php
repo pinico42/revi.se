@@ -1,4 +1,7 @@
 <?php
+
+?>
+<?php
 include "layouts.php";
 $l = getLayout("basic.layout");
 $l->writeHeader();
@@ -24,12 +27,14 @@ if(isset($_POST['email'])){
 	<div id='subjectPicker'>
 		<h3>Your Subjects:</h3>
 		<script src='subjectpicker.js' type='text/javascript'></script>
-		<div class='subPickarea'>
+		<div id='subPickarea'>
 			<div class='subjectPickerSubject'>
 				<input class='subjectPick'>
 			</div>
 		</div>
+		<img src='images/add.png' alt='+' onclick='newSubject()' height='40px'/>
 	</div>
+	<input type='submit' value='Sign Up'>
 </form>
 
 <?php
