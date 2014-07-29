@@ -9,9 +9,11 @@ $mysqlPassword = 'Woodlands';
 if(isset($_POST['email']) && isset($_POST['pwd'])){
 	$email = $_POST['email'];
 	$pwd = $_POST['pwd'];
-
-	$conn = mysqli_connect('localhost',$mysqlUsername,$mysqlPassword, 'revise');
-
+	try {
+		$conn = mysqli_connect('localhost',$mysqlUsername,$mysqlPassword, 'revise');
+	} catch(Exception $e){
+		$conn = mysqli_connect('localhost','root',NULL,'revise');
+	}
 	$request = "SELECT * FROM accounts WHERE email = '".$email."' AND pwd = '".$pwd."';";
 	$query = mysqli_query($conn, $request);
 	$nameArray = mysqli_fetch_array($query, MYSQLI_ASSOC);
