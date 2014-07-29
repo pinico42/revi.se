@@ -51,7 +51,7 @@ $l->writeHeader();
 			<td>
 				<form method='POST' action='signup.php'>
 					<input type='text' name='fname' placeholder='First Name' class='halfwidth'>
-					<input type='text' name='sname' placeholder='Surame' class='halfwidth'><br/>
+					<input type='text' name='sname' placeholder='Surname' class='halfwidth'><br/>
 					<input type='text' name='email' placeholder='E-mail'><br/>
 					<input type='submit' value='Sign Up'>
 				</form>

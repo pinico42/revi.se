@@ -4,6 +4,9 @@
 		<title>Revi.se</title>
 		<link type='text/less' rel="stylesheet/less" href="css/commons.less"/>
 		<link type='text/less' rel="stylesheet/less" href="css/specifics.less"/>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+ 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  		<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 		<script src="/less.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -16,6 +19,8 @@
 				<line x1="0" y1="18" x2="30" y2="18" style="stroke:white;stroke-width:4" />
 			</svg>
 		</header>
-		@content
+		<div class='content'>
+			@content
+		</div>
 	</body>
 </html>
