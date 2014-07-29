@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Revi.se</title>
 		<link type='text/less' rel="stylesheet/less" href="css/commons.less"/>
 		<link type='text/less' rel="stylesheet/less" href="css/specifics.less"/>
 		<script src="/less.js" type="text/javascript"></script>
