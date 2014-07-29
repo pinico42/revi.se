@@ -19,9 +19,6 @@ namespace Test
             Console.WriteLine(result);
             int numresults = result.sets[0].term_count;
             Console.WriteLine(numresults.ToString());
-            string json = JsonConvert.SerializeObject(result);
-            String filename = @"C:\Users\ryan\desktop\results\" + args[0] + ".json";
-            System.IO.File.WriteAllText(filename, json);
         }
     }
 }
