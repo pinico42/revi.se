@@ -1,0 +1,6 @@
+C:\Users\ryan\Desktop\Ryan C#\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\ryan\Desktop\Ryan C#\Test\Test\bin\Debug\Test.exe
+C:\Users\ryan\Desktop\Ryan C#\Test\Test\bin\Debug\Test.pdb
+C:\Users\ryan\Desktop\Ryan C#\Test\Test\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ryan\Desktop\Ryan C#\Test\Test\obj\Debug\Test.exe
+C:\Users\ryan\Desktop\Ryan C#\Test\Test\obj\Debug\Test.pdb
