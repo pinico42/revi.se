@@ -54,7 +54,6 @@ $subjectImages = array(
 	"Religious Studies" => "images/subjects/relegiousstudies.png",
 	"Spanish" => "images/subjects/spanish.png",
 );
-var_dump($_SERVER);
 ?>
 <h1 class='title'>Your Subjects</h1>
 <div id='subjects'>
@@ -69,7 +68,7 @@ var_dump($_SERVER);
 		}
 
 		echo "
-			<a class='flip-container' href='topics/?t=".$subject['Name']."'>
+			<a class='flip-container' href='topics.php?s=".$subject['Name']."'>
 				<div class='flipper'>
 					<div class='front c$r'>
 						<img src='".$subjectImages[$subject["Name"]]."' width='40%' height='40%'>
