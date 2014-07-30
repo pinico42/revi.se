@@ -1,3 +1,8 @@
+@c1: #00caff;
+@c2: #f25648;
+@c3: #4FB99F;
+@c4: #f2b635;
+@c5: #00a0e6;
 
 #loginsignup tbody td:first-child{
 	text-align: right;
@@ -46,8 +51,57 @@ a.flip-container {
 	text-decoration: none;
 }
 
+
+.topics {
+	height: 90vh;
+	min-width: 20vw;
+}
 .topic {
-	display:inline;
-	height: 70vh;
+	display:inline-block;
+	height: 100%;
 	width: 20vh;
+	text-align: center;
+}
+
+.fade {
+	transition: visibility 1s;
+	-webkit-transition: visibility 1s;
+	visibility: visible;
+}
+
+#quiz {
+	text-align: center;
+	margin-top: 100px;
+}
+
+#quiz input {
+	transition: background-color 0.5s;
+	-webkit-transition: background-color 0.5s;
+}
+
+#asubmit {
+	border-radius: 100000000000px;
+	padding: 10px 40px;
+	margin-top: 20px;
+}
+
+#asubmit:active {
+	background-color: white;
+	color: @c4;
+}
+
+html {
+	content: '';
+}
+
+#quiz #correction {
+	margin: 0px;
+	background-color: #bb535b;
+	border: 1px solid white;
+	color: white;
+	transition: height 1s;
+	-webkit-transition: height 1s;
+	display: inline-block;
+	width: 200px;
+	overflow: hidden;
 }

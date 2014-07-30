@@ -62,10 +62,10 @@ $l->writeHeader();
 		echo $s;
 		echo "
 			<div class='topic'>
-				<img src='$img' alt='' height=10% width='10%'>
+				<img src='$img' alt='' height='30vh' width='30vh'>
 				<h4>$name</h4>
 				<p class='topicDesc fade'>$desc</p>
-				<h5>$idLen Course$s</h5>
+				<h5 class='topic fade'>$idLen Course$s</h5>
 			</div>
 		";
 	}

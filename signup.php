@@ -29,7 +29,7 @@ if(isset($_POST['email'])){
 		<script src='subjectpicker.js' type='text/javascript'></script>
 		<div id='subPickarea'>
 			<div class='subjectPickerSubject'>
-				<input class='subjectPick'>
+				<input class='subjectPick' placeholder='Subject'><select name="examBoard2"><option>AQA</option></select>
 			</div>
 		</div>
 		<img src='images/add.png' alt='+' onclick='newSubject()' height='40px'/>
