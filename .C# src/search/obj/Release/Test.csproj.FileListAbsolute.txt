@@ -1,5 +1,0 @@
-C:\Users\ryan\Desktop\Ryan C#\Test\Test\bin\Release\Test.exe
-C:\Users\ryan\Desktop\Ryan C#\Test\Test\bin\Release\Test.pdb
-C:\Users\ryan\Desktop\Ryan C#\Test\Test\bin\Release\Newtonsoft.Json.dll
-C:\Users\ryan\Desktop\Ryan C#\Test\Test\obj\Release\Test.exe
-C:\Users\ryan\Desktop\Ryan C#\Test\Test\obj\Release\Test.pdb
