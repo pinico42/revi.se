@@ -1,6 +1,6 @@
 var questionBox = document.getElementById('question');
 var input = document.getElementById('answer');
-var submit = document.getElementById('asubmit');
+var quizdiv = document.getElementById('quiz');
 var currentQ = '';
 var currentA = '';
 var correct = 0;
@@ -44,14 +44,20 @@ function submitAnswer(){
 	} else {
 		incorrect();
 	}
+	console.log('next...')
 	window.setTimeout(writeQuestion, 2000);
 }
 
 function writeQuestion(){
-	var q = keys[0];
-	currentQ = q
-	var a = questions[q];
-	currentA = a
+	console.log('go')
+	var q = keys[done];
+	if(!q){
+
+	} else {
+		currentQ = q
+		var a = questions[q];
+		currentA = a
+	}
 	question.innerHTML = q;
 }
 

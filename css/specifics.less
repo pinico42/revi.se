@@ -52,21 +52,23 @@ a.flip-container {
 }
 
 
-.topics {
-	height: 90vh;
-	min-width: 20vw;
-}
 .topic {
-	display:inline-block;
-	height: 100%;
-	width: 20vh;
+	display: inline-block;
 	text-align: center;
+	width: 30vh;
+	background-color: blue;
+	height: 45vh;
+    box-shadow: 3px 3px 3px #888;
+    margin: 0vh 3vh;
+    padding: 10vh 2vh 0vh 2vh;
+    vertical-align: middle;
 }
+
 
 .fade {
 	transition: visibility 1s;
 	-webkit-transition: visibility 1s;
-	visibility: visible;
+	visibility: hidden;
 }
 
 #quiz {
@@ -104,4 +106,13 @@ html {
 	display: inline-block;
 	width: 200px;
 	overflow: hidden;
+	height: 0%;
+}
+
+body {
+	overflow-x: auto;
+}
+
+.flipper {
+    box-shadow: 5px 5px 5px #888888;
 }
