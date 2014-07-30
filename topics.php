@@ -57,13 +57,25 @@ $l->writeHeader();
 		$img = $result['img'];
 		$creator = $result['email'];
 		$desc = $result['descr'];
+		$uid = $result['uid'];
 		$ids = explode($result['ids'], ',');
 		$idLen = sizeof($ids);
 
-		$s = ($idLen != 1 ? 's' : ''); ;
+		$abilities = get_json('private/abilities.json');
+		$usersAbilities = $abilities[$email];
+		$topicsAbility = $usersAbilities[$uid];
+		$timesDone = $topicsAbility['done'];
+		$timesCorrect = $topicsAbility['right'];
+		$percentage = ($timesCorrect/$timesDone) * 100;
+
+		$bgColor = "hsla(".floor($percentage * 1.1).", 63%, ".floor(($percentage * 0.1) + 59)."%, 1)";
+
+
+
+		$s = ($idLen != 1 ? 's' : '');
 		echo $s;
 		echo "
-			<div class='topic'>
+			<div class='topic' style='background-color: $bgColor;'>
 				<img src='$img' alt='' height='30vh' width='30vh'>
 				<h4>$name</h4>
 				<p class='topicDesc fade'>$desc</p>
@@ -77,7 +89,7 @@ $l->writeHeader();
 		<h4>New</h4>
 	</div>
 </div>
-
+<script src='topicExpander.js' type='text/javascript'></script>
 <?php
 $l->writeFooter();
 ?>

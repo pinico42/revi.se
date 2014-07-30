@@ -1,6 +1,7 @@
-$(function(){
-	var topics = document.getElementsByClassName('topic');
-	for(t = 0; t < topics.length; t++){
-		topic = topics[t];
+$('.topic').click(function(){
+	console.log('resize')
+	if($(this).width() == '20vh'){ // thin - not selected
+		$('.topics').width('20vh');
+		$(this).width('30vh');
 	}
-})
+});

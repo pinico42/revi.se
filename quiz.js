@@ -13,7 +13,7 @@ function getPercentage(correctqs, done){
 }
 
 function setBgColor(percentage){
-	var color = "hsla("+Math.floor((percentage*1.1))+", 100%, 30%, 1)";
+	var color = "hsla("+Math.floor((percentage * 1.1))+", 63%, 69%, 1)";
 	document.getElementsByTagName('body')[0].style.backgroundColor = color;
 }
 
@@ -23,14 +23,14 @@ function simplify(string){
 }
 
 function iscorrect(){
-	input.style.backgroundColor = "hsla(110, 100%, 30%, 1)";
+	input.style.backgroundColor = "hsla(110, 40%, 40%, 1)";
 	correct = correct + 1;
 	setBgColor(getPercentage(correct,done));
 	window.setTimeout(writeQuestion, 2000);
 }
 
 function incorrect(){
-	input.style.backgroundColor = "hsla(0, 100%, 40%, 1)";
+	input.style.backgroundColor = "hsla(0, 60%, 50%, 1)";
 	setBgColor(getPercentage(correct,done));
 }
 
@@ -44,12 +44,10 @@ function submitAnswer(){
 	} else {
 		incorrect();
 	}
-	console.log('next...')
 	window.setTimeout(writeQuestion, 2000);
 }
 
 function writeQuestion(){
-	console.log('go')
 	var q = keys[done];
 	if(!q){
 
