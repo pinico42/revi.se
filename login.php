@@ -1,11 +1,5 @@
 <?php
-
-$mysqlUsername = 'root';
-$mysqlPassword = 'Woodlands';
-?>
-
-<?php
-
+include 'private/pwds.php';
 if(isset($_POST['email']) && isset($_POST['pwd'])){
 	$email = $_POST['email'];
 	$pwd = $_POST['pwd'];
