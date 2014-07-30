@@ -36,9 +36,11 @@ $l->writeHeader();
 <h1 class='title'>Your Topics</h1>
 <div id='topics'>
 	<?php
-	$conn = mysqli_connect('localhost',$mysqlUsername,$mysqlPassword, 'revise');
+	
 
 	foreach($currentTopic as $topicUID){
+		$conn = mysqli_connect('localhost',$mysqlUsername,$mysqlPassword, 'revise');
+
 		$q = "SELECT * FROM topics WHERE uid = '$topicUID';";
 
 		$query = mysqli_query($conn, $q);
@@ -70,7 +72,10 @@ $l->writeHeader();
 		";
 	}
 	?>
-	<div class='topic new'>new</div>
+	<div class='topic new'>
+		<img src='images/plus.png' height='30vh' width='30vh'>
+		<h4>New</h4>
+	</div>
 </div>
 
 <?php
