@@ -7,6 +7,11 @@ var correct = 0;
 var done = 0;
 var keys = Object.keys(questions);
 
+function onEnter(e){
+	if(e.keyCode == 13){
+		submitAnswer();
+	}
+}
 
 function getPercentage(correctqs, done){
 	return (correctqs/done)*100;

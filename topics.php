@@ -68,8 +68,7 @@ $l->writeHeader();
 		$timesCorrect = $topicsAbility['right'];
 		$percentage = ($timesCorrect/$timesDone) * 100;
 
-		$bgColor = "hsla(".floor($percentage * 1.1).", 63%, ".floor(($percentage * 0.1) + 59)."%, 1)";
-
+		$bgColor = "hsla(".floor($percentage * 1.1).", 63%, ".floor(($percentage * 0.2) + 45)."%, 1)";
 
 
 		$s = ($idLen != 1 ? 's' : '');
