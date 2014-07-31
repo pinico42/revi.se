@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Revi.se</title>
+		<title>YouRevise</title>
 		<link type='text/less' rel="stylesheet/less" href="css/commons.less"/>
 		<link type='text/less' rel="stylesheet/less" href="css/specifics.less"/>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
