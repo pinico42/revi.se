@@ -24,7 +24,7 @@ namespace QuizletSearch
 
             //Saves search results as a .json file.
             string json = JsonConvert.SerializeObject(result);
-            String filename = @"C:\Users\ryan\desktop\results\results.json";
+            String filename = @"C:\wamp\www\revise\results.json";
             System.IO.File.WriteAllText(filename, json);
         }
     }
