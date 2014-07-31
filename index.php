@@ -70,8 +70,8 @@ $subjectImages = array(
 		echo "
 			<a class='flip-container' href='topics.php?s=".$subject['Name']."'>
 				<div class='flipper'>
-					<div class='front c$r'>
-						<img src='".$subjectImages[$subject["Name"]]."' width='40%' height='40%'>
+					<div class='front c$r' style='background-image:url(".$subjectImages[$subject["Name"]].")'>
+						<!--<img src='".$subjectImages[$subject["Name"]]."' width='40%' height='40%'>-->
 					</div>
 					<div class='back c$r'>
 						<div class='fContent'>
