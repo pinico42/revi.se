@@ -32,7 +32,12 @@ include "layouts.php";
 $l = getLayout("basic.layout");
 $l->writeHeader();
 ?>
-
+<style>body{
+	width: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}</style>
 <h1 class='title'>Your Topics</h1>
 <div id='topics'>
 	<?php
@@ -68,25 +73,24 @@ $l->writeHeader();
 		$timesCorrect = $topicsAbility['right'];
 		$percentage = ($timesCorrect/$timesDone) * 100;
 
-		$bgColor = "hsla(".floor($percentage * 1.1).", 63%, ".floor(($percentage * 0.2) + 45)."%, 1)";
-
+		$bgColor = "hsla(".floor($percentage * 1.30).", 63%, 53%, 1)";
 
 		$s = ($idLen != 1 ? 's' : '');
 		echo $s;
 		echo "
-			<div class='topic' style='background-color: $bgColor;'>
+			<div class='topic thin' style='background-color: $bgColor;'>
 				<img src='$img' alt='' height='30vh' width='30vh'>
 				<h4>$name</h4>
 				<p class='topicDesc fade'>$desc</p>
-				<h5 class='topic fade'>$idLen Course$s</h5>
+				<h5 class='topicCourses fade'>$idLen Course$s</h5>
 			</div>
 		";
 	}
 	?>
-	<div class='topic new'>
+	<a class='topic new' href='newtopic.php'>
 		<img src='images/plus.png' height='30vh' width='30vh'>
 		<h4>New</h4>
-	</div>
+	</a>
 </div>
 <script src='topicExpander.js' type='text/javascript'></script>
 <?php

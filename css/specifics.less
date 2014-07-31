@@ -57,24 +57,40 @@ a.flip-container {
 	background-position: center;
 }
 
-
 .topic {
 	display: inline-block;
 	text-align: center;
 	width: 20vh;
-	background-color: blue;
-	height: 45vh;
-    box-shadow: 3px 3px 3px #888;
+	background-color: @c5;
+	height: 65vh;
     margin: 0vh 3vh;
     padding: 10vh 2vh 0vh 2vh;
     vertical-align: middle;
+    border: 2px solid white;
+    cursor:pointer;
+    transition: width 0.5s;
+    -webkit-transition: width 0.5s;
 }
 
 
+
+.topic.new:active {
+	transform:scale(0.98,0.98);
+	-ms-transform:scale(0.98,0.98); /* IE 9 */
+	-webkit-transform:scale(0.98,0.98); /* Opera, Chrome, and Safari */
+}
+
 .fade {
-	transition: visibility 1s;
-	-webkit-transition: visibility 1s;
-	visibility: hidden;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+}
+
+.thin .fade {
+	opacity: 0;
+}
+
+.thick .fade {
+	opacity: 1;
 }
 
 #quiz {
@@ -115,12 +131,16 @@ body {
 	overflow-x: auto;
 }
 
-.flipper {
-    box-shadow: 5px 5px 5px #888888;
+.topic img {
+	margin-top: 15vh;
 }
 
-.topic img {
-	margin-top: 40em;
+.topic.thick {
+	width:35vh;
+}
+
+.topic.thin {
+	width:20vh;
 }
 
 .adds {

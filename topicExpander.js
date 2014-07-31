@@ -1,7 +1,11 @@
 $('.topic').click(function(){
 	console.log('resize')
-	if($(this).width() == '20vh'){ // thin - not selected
-		$('.topics').width('20vh');
-		$(this).width('30vh');
+	var elem = $(this).get(0);
+	if(elem.className.indexOf('thin') > -1){ // is thin
+		$('.topic').removeClass('thick');
+		$('.topic').addClass('thin');
+		elem.className = elem.className.replace('thin','thick');
+	} else {
+		elem.className = elem.className.replace('thick','thin');
 	}
 });
