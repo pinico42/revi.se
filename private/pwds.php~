@@ -1,0 +1,5 @@
+<?php
+
+$mysqlUsername = 'root';
+$mysqlPassword = 'Woodlands';
+?>

@@ -53,6 +53,7 @@ function submitAnswer(){
 }
 
 function writeQuestion(){
+	input.value = '';
 	var q = keys[done];
 	if(!q){
 

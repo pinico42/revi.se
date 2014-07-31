@@ -1,0 +1,38 @@
+{
+	"mxpen26@gmail.com": [
+		{"Name":"Maths","board":"Edexcel"},
+		{"Name":"English Literature","board":"OCR"},
+		{"Name":"English Language","board":"OCR"},
+		{"Name":"Geography","board":"OCR"},
+		{"Name":"History","board":"OCR"},
+		{"Name":"Biology","board":"OCR"},
+		{"Name":"Physics","board":"OCR"},
+		{"Name":"Chemistry","board":"OCR"},
+		{"Name":"Religious Studies","board":"OCR"},
+		{"Name":"French","board":"OCR"},
+		{"Name":"Music","board":"OCR"},
+		{"Name":"German","board":"OCR"},
+		{"Name":"Spanish","board":"OCR"},
+		{"Name":"Latin","board":"OCR"},
+		{"Name":"Greek","board":"OCR"},
+		{"Name":"Art","board":"OCR"}
+	]
+	"ryan@kendrickfamily.info": [
+		{"Name":"Maths","board":"Edexcel"},
+		{"Name":"English Literature","board":"OCR"},
+		{"Name":"English Language","board":"OCR"},
+		{"Name":"Geography","board":"OCR"},
+		{"Name":"History","board":"OCR"},
+		{"Name":"Biology","board":"OCR"},
+		{"Name":"Physics","board":"OCR"},
+		{"Name":"Chemistry","board":"OCR"},
+		{"Name":"Religious Studies","board":"OCR"},
+		{"Name":"French","board":"OCR"},
+		{"Name":"Music","board":"OCR"},
+		{"Name":"German","board":"OCR"},
+		{"Name":"Spanish","board":"OCR"},
+		{"Name":"Latin","board":"OCR"},
+		{"Name":"Greek","board":"OCR"},
+		{"Name":"Art","board":"OCR"}
+	]
+}

@@ -71,7 +71,7 @@ else:
 
 i = iter(ListToExport)
 b = dict(izip(i, i))
-print json.dumps(b)
+json.dumps(b)
 
 
 

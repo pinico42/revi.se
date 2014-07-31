@@ -1,10 +1,29 @@
 <?php
+include 'private/pwds.php';
+if(isset($_GET['u'])){
+	$uid = $_GET['u'];
+	$conn = mysqli_connect('localhost', $mysqlUsername, $mysqlPassword, 'revise');
+
+	$q = "SELECT * from topics where uid = '$uid';";
+
+	$query = mysqli_query($conn, $q);
+
+	$qarray = mysqli_fetch_array($query, MYSQLI_ASSOC);
+
+	$ids = $qarray['ids'];
+	$cmd = 'python getquestions.py \''.$ids.'\'';
+	$out =  shell_exec($cmd);
+} else {
+	header('Location: index.php');
+}
+?>
+<?php
 include "layouts.php";
 $l = getLayout("basic.layout");
 $l->writeHeader();
 ?>
 <script type='text/javascript'>
-	var questionsJSON = "<?php echo '{\"Why did the chicken cross the road?\":\"To get to the other side\",\"How do you spell \'hungry horse\' in four letters?\":\"MTGG\"}';?>";
+	var questionsJSON = <?php echo "'".utf8_encode($out)."'"; ?>;
 	var questions = JSON.parse(questionsJSON);
 </script>
 
