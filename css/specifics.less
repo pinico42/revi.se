@@ -70,9 +70,15 @@ a.flip-container {
     cursor:pointer;
     transition: width 0.5s;
     -webkit-transition: width 0.5s;
+    white-space: normal;
 }
 
-
+.topic > a {
+	border: 2px solid white;
+	padding: 2vh;
+	transform:scale(0.95,0.95);
+-ms-transform:scale(0.95,0.95); /* IE 9 */
+-webkit-transform:scale(0.95,0.95); /* Opera, Chrome, and Safari */}
 
 .topic.new:active {
 	transform:scale(0.98,0.98);
@@ -85,11 +91,11 @@ a.flip-container {
 	-webkit-transition: opacity 0.5s;
 }
 
-.thin .fade {
+.topic.thin .fade {
 	opacity: 0;
 }
 
-.thick .fade {
+.topic.thick .fade {
 	opacity: 1;
 }
 
@@ -164,3 +170,13 @@ table#searchResults td:first-child {
 table#searchResults td:nth-child(2) {
 	width: 20vw;
 }
+
+#answer {
+	background-size: 15%;
+	background-repeat: no-repeat;
+	background-position-x: 260px;
+}
+
+/*#post-quiz {
+	size: 20px;
+}*/

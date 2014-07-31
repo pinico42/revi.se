@@ -23,8 +23,7 @@ $l = getLayout("basic.layout");
 $l->writeHeader();
 ?>
 <script type='text/javascript'>
-	var questionsJSON = <?php echo "'".utf8_encode($out)."'"; ?>;
-	var questions = JSON.parse(questionsJSON);
+	var questions = <?php echo $out;?>;
 </script>
 
 <div id='quiz'>

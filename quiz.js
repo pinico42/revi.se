@@ -29,6 +29,7 @@ function simplify(string){
 
 function iscorrect(){
 	input.style.backgroundColor = "hsla(110, 40%, 40%, 1)";
+	input.style.backgroundImage = "url(images/tick.png)";
 	correct = correct + 1;
 	setBgColor(getPercentage(correct,done));
 	window.setTimeout(writeQuestion, 2000);
@@ -36,6 +37,7 @@ function iscorrect(){
 
 function incorrect(){
 	input.style.backgroundColor = "hsla(0, 60%, 50%, 1)";
+	input.style.backgroundImage = "url(images/cross.png)";
 	setBgColor(getPercentage(correct,done));
 }
 
@@ -52,11 +54,17 @@ function submitAnswer(){
 	window.setTimeout(writeQuestion, 2000);
 }
 
+function showDone(){
+	
+}
+
 function writeQuestion(){
 	input.value = '';
+	input.style.backgroundColor = 'transparent';
+	input.style.backgroundImage = 'none';
 	var q = keys[done];
-	if(!q){
-
+	if(q == undefined){
+		showDone();
 	} else {
 		currentQ = q
 		var a = questions[q];

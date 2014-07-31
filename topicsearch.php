@@ -7,9 +7,21 @@ function writeResult($sqlArray, $i){ // prints the table cell
 
 	$name = $sqlArray['name'];
 	$description = $sqlArray['descr'];
+	$uid = $sqlArray['uid'];
 	echo "
 		<tr class='$classNum'>
-			<td>$name</td><td>$description</td>
+			<td>
+				$name
+			</td>
+			<td>
+				$description
+			</td>
+			<td>
+				<form method='post'>
+					<input type='hidden' name='uid' value='$uid'>
+					<input type='submit' value='Add'>
+				</form>
+			</td>
 		</tr>
 	";
 }
@@ -44,6 +56,6 @@ if(!is_null($array)){
 		$l = $l + 1;
 	}
 } else {
-	echo '<tr class="c3"><td colspan="2">No Results</td></tr>';
+	echo '<tr class="c3"><td colspan="3">No Results</td></tr>';
 }
 ?>

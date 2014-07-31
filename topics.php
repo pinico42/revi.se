@@ -83,6 +83,7 @@ $l->writeHeader();
 				<h4>$name</h4>
 				<p class='topicDesc fade'>$desc</p>
 				<h5 class='topicCourses fade'>$idLen Course$s</h5>
+				<a href='quiz.php?u=$uid' class='fade'>Play Quiz</a>
 			</div>
 		";
 	}

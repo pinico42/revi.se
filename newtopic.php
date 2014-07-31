@@ -8,30 +8,37 @@ $l->writeHeader();
 		var currentQ = String.fromCharCode(e.keyCode);
 		var q = document.getElementById('topicSearch').value + currentQ;
 		$.get('topicsearch.php?q='+q,function(result){
-			document.getElementById('topicSearchResults').getElementsByTagName('tbody')[0].innerHTML = result;
+			document.getElementById('search').getElementsByTagName('tbody')[0].innerHTML = result;
 		});
 	}
+	$('.adds').click(function(){
+		console.log('resize')
+		var elem = $(this).get(0);
+		if(elem.className.indexOf('thin') > -1){ // is thin
+			$('.adds').removeClass('thick');
+			$('.adds').addClass('thin');
+			elem.className = elem.className.replace('thin','thick');
+		}
+	});
 </script>
-<div id='search' class='adds'>
+<div id='search' class='adds thick'>
 	<h1 class='title'>Search for topics</h1>
 	<input id='topicSearch' onkeypress="return keyPress(event)">
-	<form method='post' id='topicSearchResults'>
-		<h4>Your Results:</h4>
-		<table cellpadding="0px" cellspacing="0px" id='searchResults'>
-			<thead>
-				<tr class='c5'>
-					<td>Name</td>
-					<td>Description</td>
-					<td>Put in set</td>
-				</tr>
-			</thead>
-			<tbody>
-				
-			</tbody>
-		</table>
-	</form>
+	<h4>Your Results:</h4>
+	<table cellpadding="0px" cellspacing="0px" id='searchResults'>
+		<thead>
+			<tr class='c5'>
+				<td>Name</td>
+				<td>Description</td>
+				<td>Add to collection</td>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
 </div>
-<div id='make' class='adds'>
+<div id='make' class='adds thin'>
 	<h1 class='title'>Create a topic</h1>
 </div>
 
