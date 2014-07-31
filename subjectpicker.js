@@ -46,4 +46,26 @@ function newSubject(){
   sub.appendChild(select);
 
   document.getElementById('subPickarea').appendChild(sub);
+
+  var availableSubjects = [
+    "Maths",
+    "English Literature",
+    "English Language",
+    "Geography",
+    "History",
+    "Biology",
+    "Physics",
+    "Chemistry",
+    "Religious Studies",
+    "French",
+    "Music",
+    "German",
+    "Spanish",
+    "Latin",
+    "Greek",
+    "Art",
+  ];
+  $( ".subjectPick" ).autocomplete({
+    source: availableSubjects
+  });
 }
