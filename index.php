@@ -1,7 +1,19 @@
 <?php
+include 'private/pwds.php';
+if(!isset($_COOKIE['email']) || !isset($_COOKIE['pwd'])){ // not logged in
+	header('Location: login.php'); // to login screen
+} else { // security - check cookie details are correct
+	$conn = mysqli_connect('localhost',$mysqlUsername,$mysqlPassword,'revise');
+	$q = 'SELECT * FROM accounts WHERE email = "'.$_COOKIE['email'].'" AND pwd = "'.sha1($_COOKIE['pwd']).'";';
 
-if(!isset($_COOKIE['email']) || !isset($_COOKIE['pwd'])){
-	header('Location: login.php');
+	$query = mysqli_query($conn, $q);
+
+	$qArray = mysqli_fetch_array($query, MYSQLI_ASSOC);
+	if(is_null($qArray)){
+		// header('Location: login.php');  to login screen
+		setcookie("email", "", time()-3600);
+		setcookie("pwd", "", time()-3600);
+	}
 }
 
 ?>
@@ -13,7 +25,7 @@ $l->writeHeader();
 ?>
 
 <?php
-function get_json($path){
+function get_json($path){ 
 	$subjectsFile = fopen($path,'r');
 
 	$json = fread($subjectsFile,filesize($path));

@@ -3,12 +3,11 @@ include 'private/pwds.php';
 if(isset($_POST['email']) && isset($_POST['pwd'])){
 	$email = $_POST['email'];
 	$pwd = $_POST['pwd'];
-	try {
-		$conn = mysqli_connect('localhost',$mysqlUsername,$mysqlPassword, 'revise');
-	} catch(Exception $e){
-		$conn = mysqli_connect('localhost','root',NULL,'revise');
-	}
-	$request = "SELECT * FROM accounts WHERE email = '".$email."' AND pwd = '".$pwd."';";
+	
+	$conn = mysqli_connect('localhost',$mysqlUsername,$mysqlPassword, 'revise');
+	
+	$request = "SELECT * FROM accounts WHERE email = '".$email."' AND pwd = '".sha1($pwd,FALSE)."';";
+
 	$query = mysqli_query($conn, $request);
 	$nameArray = mysqli_fetch_array($query, MYSQLI_ASSOC);
 

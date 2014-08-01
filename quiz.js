@@ -71,7 +71,8 @@ function showDone(){
 	pquiz.style.display = 'block';
 	console.log('flip');
 	pquiz.innerHTML = getPercentage(correct, done) + '%';
-	window.setTimeout(function(){pquiz.className = 'expandAndFlip';},10);
+	pquiz.innerHTML += '<br/><a href="index.php"><button>Back to Home</button></a>';
+	window.setTimeout(function(){pquiz.className = '';},10);
 }
 
 function writeQuestion(){

@@ -11,6 +11,7 @@ if(isset($_POST['email'])){
 	$email = $_POST['email'];
 	$fname = $_POST['fname'];
 	$sname = $_POST['sname'];
+
 } else {
 	$email = '';
 	$fname = '';
@@ -29,10 +30,13 @@ if(isset($_POST['email'])){
 		<script src='subjectpicker.js' type='text/javascript'></script>
 		<div id='subPickarea'>
 			<div class='subjectPickerSubject'>
-				<input class='subjectPick' placeholder='Subject'><select name="examBoard2"><option>AQA</option></select>
+				<input class='subjectPick' placeholder='Subject' name='s1' type='text'> 
+				<select name="b1">
+					<option value='AQA'>AQA</option>
+				</select>
 			</div>
 		</div>
-		<img src='images/add.png' alt='+' onclick='newSubject()' height='40px'/>
+		<img src='images/plus.png' alt='+' onclick='newSubject()' height='30px' width='30px'/>
 	</div>
 	<input type='submit' value='Sign Up'>
 </form>

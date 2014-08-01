@@ -39,6 +39,7 @@ function newSubject(){
   select.name = 'examBoard' + selectionCount;
 
   var optionAQA = document.createElement('option');
+  optionAQA.value = ''
   var nodeAQA = document.createTextNode('AQA');
   optionAQA.appendChild(nodeAQA);
   select.appendChild(optionAQA);
