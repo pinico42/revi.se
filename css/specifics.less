@@ -177,6 +177,22 @@ table#searchResults td:nth-child(2) {
 	background-position-x: 260px;
 }
 
-/*#post-quiz {
-	size: 20px;
-}*/
+#post-quiz {
+	display: none;
+	width: 45vw;
+	height: 60vh;
+	background-color: @c5;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 40vh;
+	transition: transform 1s;
+	-webkit-transition: -webkit-transform 1s;
+	transform: rotateX(360deg) scale(-45,-60);
+	-webkit-transform: rotateX(360deg) scale(-45,-60);
+}
+
+.expandAndFlip {
+	transform: rotateX(360deg) scale(0,0);
+	-webkit-transform: rotateX(360deg) scale(0,0);
+
+}

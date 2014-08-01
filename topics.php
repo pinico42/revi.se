@@ -88,7 +88,7 @@ $l->writeHeader();
 		";
 	}
 	?>
-	<a class='topic new' href='newtopic.php'>
+	<a class='topic new' href='newtopic.php?s=<?php echo $currentSubject; ?>'>
 		<img src='images/plus.png' height='30vh' width='30vh'>
 		<h4>New</h4>
 	</a>

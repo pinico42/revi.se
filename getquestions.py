@@ -39,7 +39,7 @@ def perform(ids): # the entry point
 	
 	random.shuffle(cards)
 	i = 0
-	while i < 20:
+	while i < 5:
 		card = cards[i]
 		q = card['term']
 		a = card['definition']

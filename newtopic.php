@@ -1,4 +1,32 @@
 <?php
+if(!isset($_GET['s'])){
+	header('Location: index.php');
+}
+
+if(isset($_POST['uid'])){
+	$subject = $_GET['s'];
+	$uid = $_POST['uid'];
+	$email = $_COOKIE['email'];
+
+	$JSONfileR = fopen('private/topics.json','r');
+	$encodedJSON = fread($JSONfileR,filesize('private/topics.json'));
+	$JSON = json_decode($encodedJSON);
+	fclose($JSONfileR);
+	// $usersTopics = $JSON[$email];
+	// $subjectsTopics = $usersTopics[$subject];
+	// $newSubjectsTopics = join($subjectsTopics, [$uid]);
+	// $usersTopics[$subject] = $newSubjectsTopics;
+	// $newUsersTopics = $usersTopics;
+	// $JSON[$email] = $newUsersTopics;
+
+	// $newJSON = json_encode($JSON);
+
+	// $newJsonfile = fopen('private/topics.json','w');
+	// fwrite($newJsonfile,$newJSON);
+	// fclose($newJsonfile);
+}
+?>
+<?php
 include "layouts.php";
 $l = getLayout("basic.layout");
 $l->writeHeader();
@@ -38,9 +66,9 @@ $l->writeHeader();
 		</tbody>
 	</table>
 </div>
-<div id='make' class='adds thin'>
+<!-- <div id='make' class='adds thin'>
 	<h1 class='title'>Create a topic</h1>
-</div>
+</div> -->
 
 
 
