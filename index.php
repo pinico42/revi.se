@@ -10,7 +10,7 @@ if(!isset($_COOKIE['email']) || !isset($_COOKIE['pwd'])){ // not logged in
 
 	$qArray = mysqli_fetch_array($query, MYSQLI_ASSOC);
 	if(is_null($qArray)){
-		// header('Location: login.php');  to login screen
+		header('Location: login.php');  //to login screen
 		setcookie("email", "", time()-3600);
 		setcookie("pwd", "", time()-3600);
 	}

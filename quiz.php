@@ -12,7 +12,7 @@ if(isset($_GET['u'])){
 
 	$ids = $qarray['ids'];
 	$cmd = 'python getquestions.py \''.$ids.'\'';
-	$out =  shell_exec($cmd);
+	$out =  system($cmd);
 } else {
 	header('Location: index.php');
 }
@@ -23,7 +23,7 @@ $l = getLayout("basic.layout");
 $l->writeHeader();
 ?>
 <script type='text/javascript'>
-	var questions = <?php echo $out;?>;
+	var questions = {'poule':'chicken','chien':'dog','cheval':'horse'};
 </script>
 
 <div id='quiz'>
