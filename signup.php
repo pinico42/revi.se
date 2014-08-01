@@ -1,6 +1,4 @@
-<?php
 
-?>
 <?php
 include "layouts.php";
 $l = getLayout("basic.layout");

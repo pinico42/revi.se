@@ -10,20 +10,20 @@ if(isset($_POST['uid'])){
 
 	$JSONfileR = fopen('private/topics.json','r');
 	$encodedJSON = fread($JSONfileR,filesize('private/topics.json'));
-	$JSON = json_decode($encodedJSON);
+	$JSON = json_decode($encodedJSON, TRUE);
 	fclose($JSONfileR);
-	// $usersTopics = $JSON[$email];
-	// $subjectsTopics = $usersTopics[$subject];
-	// $newSubjectsTopics = join($subjectsTopics, [$uid]);
-	// $usersTopics[$subject] = $newSubjectsTopics;
-	// $newUsersTopics = $usersTopics;
-	// $JSON[$email] = $newUsersTopics;
+	$usersTopics = $JSON[$email];
+	$subjectsTopics = $usersTopics[$subject];
+	$newSubjectsTopics = array_merge($subjectsTopics, [$uid]);
+	$usersTopics[$subject] = $newSubjectsTopics;
+	$newUsersTopics = $usersTopics;
+	$JSON[$email] = $newUsersTopics;
 
-	// $newJSON = json_encode($JSON);
-
-	// $newJsonfile = fopen('private/topics.json','w');
-	// fwrite($newJsonfile,$newJSON);
-	// fclose($newJsonfile);
+	$newJSON = json_encode($JSON);
+	$newJsonfile = fopen('private/topics.json','w');
+	fwrite($newJsonfile,$newJSON);
+	fclose($newJsonfile);
+	header('Location: topics.php');
 }
 ?>
 <?php
