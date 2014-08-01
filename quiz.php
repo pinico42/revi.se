@@ -11,8 +11,13 @@ if(isset($_GET['u'])){
 	$qarray = mysqli_fetch_array($query, MYSQLI_ASSOC);
 
 	$ids = $qarray['ids'];
+<<<<<<< HEAD
 	$cmd = 'python getquestions.py \''.$ids.'\'';
 	$out =  system($cmd);
+=======
+	$cmd = 'C:/Python27/python getquestions.py '.$ids.'';
+	$out =  shell_exec($cmd);
+>>>>>>> b14748204488886ea1549e641c65ed59405d0873
 } else {
 	header('Location: index.php');
 }

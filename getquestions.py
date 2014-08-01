@@ -23,6 +23,7 @@ def getJSON(url):
 
 def getResults(id):
 	search = 'https://api.quizlet.com/2.0/sets/' + id + '/terms?client_id=RFsBbdeZFt&whitespace=1' # quizlet api terms request url
+
 	results = getJSON(search)
 	return results
 
