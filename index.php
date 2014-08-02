@@ -1,4 +1,8 @@
 <?php
+// Copyright © 2014 Max Penrose
+?>
+
+<?php
 include 'private/pwds.php';
 if(!isset($_COOKIE['email']) || !isset($_COOKIE['pwd'])){ // not logged in
 	header('Location: login.php'); // to login screen

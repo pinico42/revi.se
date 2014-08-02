@@ -1,3 +1,5 @@
+// Copyright © 2014 Max Penrose
+
 $(document).ready(function(){
   var availableSubjects = [
     "Maths",

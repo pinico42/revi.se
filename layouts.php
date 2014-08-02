@@ -1,4 +1,7 @@
 <?php
+// Copyright © 2014 Max Penrose
+?>
+<?php
 class Layout {
 	var $header;
 	var $footer;

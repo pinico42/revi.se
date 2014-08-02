@@ -1,4 +1,7 @@
 <?php
+// Copyright © 2014 Max Penrose
+?>
+<?php
 if(!isset($_GET['s'])){
 	header('Location: index.php');
 }

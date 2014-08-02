@@ -1,3 +1,5 @@
+// Copyright © 2014 Max Penrose
+
 var questionBox = document.getElementById('question');
 var input = document.getElementById('answer');
 var quizdiv = document.getElementById('quiz');

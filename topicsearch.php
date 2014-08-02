@@ -1,4 +1,7 @@
 <?php
+// Copyright © 2014 Max Penrose
+?>
+<?php
 function writeResult($sqlArray, $i){ // prints the table cell
 	if(is_null($sqlArray)){
 		return ;

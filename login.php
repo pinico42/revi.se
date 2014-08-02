@@ -1,4 +1,8 @@
 <?php
+// Copyright © 2014 Max Penrose
+?>
+
+<?php
 include 'private/pwds.php';
 if(isset($_POST['email']) && isset($_POST['pwd'])){
 	$email = $_POST['email'];

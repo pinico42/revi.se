@@ -1,4 +1,7 @@
 <?php
+// Copyright © 2014 Max Penrose
+?>
+<?php
 include 'private/pwds.php';
 function get_json($path){
 	$subjectsFile = fopen($path,'r');

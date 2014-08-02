@@ -1,4 +1,8 @@
 <?php
+// Copyright © 2014 Max Penrose
+?>
+
+<?php
 function startsWith($haystack, $needle)
 {
     return $needle === "" || strpos($haystack, $needle) === 0;
@@ -41,7 +45,7 @@ if(isset($_POST['email'])){
 
 	$query = mysqli_query($conn,$q);
 
-	
+
 } else {
 	$email = '';
 	$fname = '';

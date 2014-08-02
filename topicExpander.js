@@ -1,3 +1,5 @@
+// Copyright © 2014 Max Penrose
+
 $('.topic').click(function(){
 	console.log('resize')
 	var elem = $(this).get(0);

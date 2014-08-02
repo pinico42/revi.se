@@ -1,4 +1,8 @@
 <?php
+// Copyright © 2014 Max Penrose
+?>
+
+<?php
 $uid = $_GET['u'];
 $right = (int) $_GET['r'];
 $done = (int) $_GET['d'];

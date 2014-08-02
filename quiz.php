@@ -1,4 +1,7 @@
 <?php
+// Copyright © 2014 Max Penrose
+?>
+<?php
 include 'private/pwds.php';
 if(isset($_GET['u'])){
 	$uid = $_GET['u'];
