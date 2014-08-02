@@ -21,7 +21,6 @@ $(document).ready(function(){
     source: availableSubjects
   });
 });
-
 function newSubject(){
   var selectionCount = document.querySelectorAll("#subjectPicker > div").length + 1;
 
@@ -32,15 +31,20 @@ function newSubject(){
   var input = document.createElement('input');
   input.placeholder = 'Subject';
   input.className = 'subjectPick';
-  input.name = 'subject' + selectionCount;
+  input.name = 's' + selectionCount;
   sub.appendChild(input);
 
   var select = document.createElement('select');
-  select.name = 'examBoard' + selectionCount;
+  select.name = 'b' + selectionCount;
 
   var optionAQA = document.createElement('option');
-  optionAQA.value = ''
+  optionAQA.value = 'aqa'
   var nodeAQA = document.createTextNode('AQA');
+  optionAQA.appendChild(nodeAQA);
+  select.appendChild(optionAQA);
+  var optionAQA = document.createElement('option');
+  optionAQA.value = 'other'
+  var nodeAQA = document.createTextNode('Other');
   optionAQA.appendChild(nodeAQA);
   select.appendChild(optionAQA);
 

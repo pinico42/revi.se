@@ -3,7 +3,7 @@ include 'private/pwds.php';
 if(isset($_POST['email']) && isset($_POST['pwd'])){
 	$email = $_POST['email'];
 	$pwd = $_POST['pwd'];
-	
+
 	$conn = mysqli_connect('localhost',$mysqlUsername,$mysqlPassword, 'revise');
 	
 	$request = "SELECT * FROM accounts WHERE email = '".$email."' AND pwd = '".sha1($pwd,FALSE)."';";
@@ -26,7 +26,7 @@ include "layouts.php";
 $l = getLayout("basic.layout");
 $l->writeHeader();
 ?>
-
+<h1>Welcome to YouRevise!</h1>
 <table id='loginsignup' cellspacing="0" cellpadding="9px">
 	<tbody>
 		<tr>

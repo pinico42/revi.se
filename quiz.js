@@ -70,7 +70,7 @@ function showDone(){
 	var pquiz = document.getElementById('post-quiz')
 	pquiz.style.display = 'block';
 	console.log('flip');
-	pquiz.innerHTML = getPercentage(correct, done) + '%';
+	pquiz.innerHTML = Math.round(getPercentage(correct, done)) + '%';
 	pquiz.innerHTML += '<br/><a href="index.php"><button>Back to Home</button></a>';
 	window.setTimeout(function(){pquiz.className = '';},10);
 }
