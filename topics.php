@@ -71,7 +71,11 @@ $l->writeHeader();
 		$topicsAbility = $usersAbilities[$uid];
 		$timesDone = $topicsAbility['done'];
 		$timesCorrect = $topicsAbility['right'];
-		$percentage = ($timesCorrect/$timesDone) * 100;
+		if($timesDone != 0){
+			$percentage = ($timesCorrect/$timesDone) * 100;
+		} else {
+			$percentage = 213;
+		}
 
 		$bgColor = "hsla(".floor($percentage * 1.30).", 63%, 53%, 1)";
 

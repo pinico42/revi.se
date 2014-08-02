@@ -72,7 +72,8 @@ function showDone(){
 	console.log('flip');
 	pquiz.innerHTML = Math.round(getPercentage(correct, done)) + '%';
 	pquiz.innerHTML += '<br/><a href="index.php"><button>Back to Home</button></a>';
-	window.setTimeout(function(){pquiz.className = '';},10);
+	window.setTimeout(function(){pquiz.className = '';},50);
+	$.ajax('updateAbilities.php?r='+correct+'&d='+done+'&u='+uid+'&m='+email);
 }
 
 function writeQuestion(){

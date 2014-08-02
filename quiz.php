@@ -16,6 +16,9 @@ if(isset($_GET['u'])){
 	$cmd = 'C:/Python27/python getquestions.py '.$ids.'';
 	$out =  shell_exec($cmd);
 
+	$out = '{"vache":"cow"}';
+
+
 } else {
 	header('Location: index.php');
 }
@@ -26,7 +29,9 @@ $l = getLayout("basic.layout");
 $l->writeHeader();
 ?>
 <script type='text/javascript'>
-	var questions = '<?php echo $out; ?>';
+	var questions = <?php echo $out; ?>;
+	var uid = "<?php echo $uid; ?>";
+	var email = "<?php echo $_COOKIE['email']; ?>"
 </script>
 
 <div id='quiz'>
