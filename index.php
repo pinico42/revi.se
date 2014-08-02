@@ -18,7 +18,7 @@ if(!isset($_COOKIE['email']) || !isset($_COOKIE['pwd'])){ // not logged in
 
 ?>
 
-<?php
+<?php // basic header
 include "layouts.php";
 $l = getLayout("basic.layout");
 $l->writeHeader();
@@ -37,7 +37,7 @@ function get_json($path){
 	return $subjectsObj;
 }
 
-$subjectsObj = get_json("private/subjects.json");
+$subjectsObj = get_json("private/subjects.json"); // contains the users subjects
 
 $email = $_COOKIE['email'];
 
