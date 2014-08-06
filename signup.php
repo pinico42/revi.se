@@ -3,49 +3,105 @@
 ?>
 
 <?php
+include 'private/pwds.php';
+
 function startsWith($haystack, $needle)
 {
     return $needle === "" || strpos($haystack, $needle) === 0;
 }
 
-if(isset($_POST['email'])){
-	echo 'submit';
+function writeJson($json, $file){
+	$data = json_encode($json, true);
+	$f = fopen($file, "w");
+	fwrite($f, $data);
+	fclose($f);
+}
+
+function readJson($file){
+	$f = fopen($file, "r");
+	$data = fread($f, filesize($file));
+	fclose($f);
+	$json = json_decode($data, true);
+	return $json;
+}
+
+function writeSubjects($subs, $email){
+	$json = readJson('private/subjects.json');
+	$subsJson = array();
+
+	foreach($subs as $k => $v){
+		$subsJson = array_merge($subsJson,array(["Name"=>$k, "Board"=>$v]));
+	}
+
+	$json[$email] = $subsJson;
+	writeJson($json, 'private/subjects.json');
+}
+
+function writeAbilities($email){
+	$json = readJson('private/abilities.json');
+
+	$json[$email] = [];
+
+	writeJson($json, 'private/abilities.json');
+}
+
+
+function writeTopics($email, $subs){
+	$json = readJson('private/topics.json');
+
+	$json[$email] = [];
+
+	foreach($subs as $k => $v){
+		$json[$email][$k] = [];
+	}
+
+	writeJson($json, 'private/topics.json');
+}
+
+if(isset($_POST['pwd'])){
 	$success = true;
 	$subs = array();
-	$boards = array();
 	foreach($_POST as $postK => $postV){
 		if($postK == 'email'){
 			$email = $postV;
-		}
+		} else
 		if($postK == 'fname'){
 			$fname = $postV;
-		}
+		} else
 		if($postK == 'sname'){
 			$sname = $postV;
-		}
+		} else 
 		if($postK == 'pwd'){
 			if($_POST['cfpwd'] == $postV){
-				$pwd = $postV;
+				$pwd = sha1($postV);
 			} else {
 				$success = false;
 			}
-		}
+		}else
 		if(startsWith($postK,'s')){
-			$num = (int) substr($postK, 1);
-			$subs[$num] = $postV;
-		}
-		if(startsWith($postK,'b')){
-			$num = (int) substr($postK, 1);
-			$boards[$num] = $postV;
+			$num = substr($postK, 1);
+			$subs[$postV] = $_POST["b".$num];
 		}
 	}
-	$conn = mysqli_connect('localhost',$mysqliUsername,$mysqliPassword,'revise');
+	if($success){
+		writeAbilities($email);
+		writeTopics($email, $subs);
+		writeSubjects($subs, $email);
+		$conn = mysqli_connect('localhost',$mysqlUsername,$mysqlPassword,'revise');
 
-	$q = 'INSERT INTO accounts (`fname`, `sname`, `email`, `pwd`) VALUES ($fname,$sname,$email,$pwd);';
+		$q = 'INSERT INTO accounts (`fname`, `sname`, `email`, `pwd`) VALUES ("'.$fname.'","'.$sname.'","'.$email.'","'.$pwd.'");';
+		$query = mysqli_query($conn,$q);
+		echo $email;
+		setcookie("email", $email, time()+259200);
+		setcookie("pwd", $pwd, time()+259200);
+		var_dump($_COOKIE);
+		header('Location: index.php');
+	}
 
-	$query = mysqli_query($conn,$q);
-
-
+} else if(isset($_POST['email'])) {
+	$email = $_POST['email'];
+	$fname = $_POST['fname'];
+	$sname = $_POST['sname'];
 } else {
 	$email = '';
 	$fname = '';
@@ -58,7 +114,7 @@ $l = getLayout("basic.layout");
 $l->writeHeader();
 ?>
 
-<h1 class='title'></h1>
+<h1 class='title'>Sign Up</h1>
 <form name='signup' method='post'>
 	<input type='text' name='fname' placeholder='First Name' value='<?php echo $fname;?>'><br/>
 	<input type='text' name='sname' placeholder='Surname' value='<?php echo $sname;?>'><br/>

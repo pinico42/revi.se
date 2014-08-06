@@ -8,7 +8,7 @@ if(!isset($_COOKIE['email']) || !isset($_COOKIE['pwd'])){ // not logged in
 	header('Location: login.php'); // to login screen
 } else { // security - check cookie details are correct
 	$conn = mysqli_connect('localhost',$mysqlUsername,$mysqlPassword,'revise');
-	$q = 'SELECT * FROM accounts WHERE email = "'.$_COOKIE['email'].'" AND pwd = "'.sha1($_COOKIE['pwd']).'";';
+	$q = 'SELECT * FROM accounts WHERE email = "'.$_COOKIE['email'].'" AND pwd = "'.$_COOKIE['pwd'].'";';
 
 	$query = mysqli_query($conn, $q);
 

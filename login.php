@@ -17,7 +17,8 @@ if(isset($_POST['email']) && isset($_POST['pwd'])){
 
 	if(!is_null($nameArray)){
 		setcookie("email", $email, time()+259200);
-		setcookie("pwd", $pwd, time()+259200);
+		setcookie("pwd", sha1($pwd), time()+259200);
+
 		header('Location: index.php');
 
 	}
